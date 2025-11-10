@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TOLUMAR — Futurista · Innovación · Marketing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="logotolumar.png" />
+
+  <style>
+    /* Fuente general */
+    body {
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #0a0a14; /* fondo oscuro elegante */
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Efecto de brillo suave */
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+      }
+    }
+
+    .halo-animado {
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <!-- LOGO PRINCIPAL TOLUMAR -->
+  <section id="logo-tolumar"
+    class="flex flex-col items-center justify-center text-center py-24 px-6 relative overflow-hidden"
+    style="
+      background: radial-gradient(circle at center, rgba(255,150,255,0.10) 0%, rgba(30,10,60,0.15) 45%, rgba(10,10,20,0.98) 100%);
+    ">
+
+    <!-- Halo suave y animado detrás del logo -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-96 h-96 rounded-full blur-3xl opacity-30 halo-animado"
+        style="background: radial-gradient(circle, rgba(255,45,149,0.4), rgba(138,43,226,0.2), transparent 70%);">
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <img 
+      src="logotolumar.png" 
+      alt="Logo TOLUMAR" 
+      class="w-64 md:w-96 relative z-10"
+    />
+
+    <!-- Nombre -->
+    <h1 class="hero-title text-5xl md:text-7xl font-extrabold mt-6 tracking-tight text-white relative z-10">
+      TOLUMAR
+    </h1>
+
+    <!-- Lema -->
+    <p class="mt-4 text-white text-lg md:text-xl max-w-2xl relative z-10">
+      Futurista · Innovación · Marketing con alma y amor.
+    </p>
+
+    <!-- Línea decorativa -->
+    <div class="h-[3px] w-32 bg-gradient-to-r from-[#FF2D95] via-[#8A2BE2] to-[#00D1FF] mt-6 rounded-full relative z-10"></div>
+  </section>
+</body>
+</html>
+
+  <style>
+    /* Palette: electric blue (#00D1FF), violet (#8A2BE2), magenta (#FF2D95) */
+    :root{
+      --neon-blue: #af2ba2;
+      --neon-violet: #8A2BE2;
+      --neon-magenta: #FF2D95;
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.10);
+    }
+
+    /* subtle glows */
+    .neon-text {
+      text-shadow: 0 0 8px rgba(0,209,255,0.18), 0 0 20px rgba(138,43,226,0.06);
+    }
+    .neon-glow {
+      box-shadow: 0 6px 30px rgba(0,209,255,0.08), inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    /* floating animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    .float-slow { animation: float 6s ease-in-out infinite; }
+
+    /* fade up */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.9s ease forwards; opacity: 0; }
+
+    /* card hover tilt + glow */
+    .card-tilt {
+      transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s ease;
+      transform-origin: center;
+    }
+    .card-tilt:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(138,43,226,0.12);
+    }
+
+    /* subtle backdrop glass */
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    /* partners marquee */
+    .partners {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      animation: slideLeft 18s linear infinite;
+    }
+    @keyframes slideLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* project image hover shine */
+    .shine::after {
+      content: "";
+      position: absolute;
+      top: -60%;
+      left: -30%;
+      width: 30%;
+      height: 200%;
+      transform: rotate(25deg);
+      background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.15), rgba(255,255,255,0.0));
+      transition: all .9s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .project-card:hover .shine::after {
+      left: 120%;
+      opacity: 1;
+    }
+
+    /* simple responsive tweaks for long titles */
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2.0rem; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-slate-100 selection:bg-neon-blue selection:text-slate-900">
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full z-40 top-0 left-0">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between glass">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="TOLUMAR" class="h-11 w1 rounded-md neon-glow" />
+        <div>
+          <div class="text-lg font-extrabold tracking-wide neon-text" style="color:var(--neon-blue)">TOLUMAR</div>
+          <div class="text-xs text-slate-300 -mt-1">Innovación · Automatización · Marketing</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-200">
+        <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+        <a href="#servicios" class="hover:text-white transition">Servicios</a>
+        <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
+        <a href="#socios" class="hover:text-white transition">Nuestros Socios</a>
+        <a href="#contacto" class="hover:text-white transition">Contáctenos</a>
+      </nav>
+
+      <div class="md:hidden">
+        <!-- simple mobile anchor -->
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="px-3 py-2 rounded-md glass">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden px-6 pb-4 md:hidden bg-slate-900/80 glass">
+      <a href="#nosotros" class="block py-2 border-b border-slate-800">Nosotros</a>
+      <a href="#servicios" class="block py-2 border-b border-slate-800">Servicios</a>
+      <a href="#proyectos" class="block py-2 border-b border-slate-800">Proyectos</a>
+      <a href="#socios" class="block py-2 border-b border-slate-800">Nuestros Socios</a>
+      <a href="#contacto" class="block py-2">Contáctenos</a>
+    </div>
+  </header>
+
+  <main class="pt-28">
+
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-6 pb-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h1 class="hero-title text-4xl md:text-6xl font-extrabold leading-tight neon-text">
+          <span class="inline-block px-3 py-1 rounded-full" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-violet)); color:#061021">Innovación</span>
+          , automatización y
+          <span class="inline-block px-3 py-1 rounded-full" style="background:linear-gradient(90deg,var(--neon-magenta),var(--neon-violet)); color:#061021">marketing</span>
+          — el camino hacia tu crecimiento digital.
+        </h1>
+        <p class="text-slate-300 max-w-2xl">
+          Creamos experiencias digitales con alma: estrategia + tecnología + creatividad. Transformamos ideas en productos y ventas con procesos automatizados y diseño humano.
+        </p>
+
+        <div class="flex gap-4 items-center">
+          <a href="#proyectos" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#8A2BE2] text-slate-900 font-semibold shadow-lg transform transition hover:scale-105">
+            Ver Proyectos
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <button id="contactCta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})" class="px-4 py-2 rounded-full border border-slate-700 glass hover:scale-105 transition">
+            Contáctanos
+          </button>
+        </div>
+
+        <div class="flex items-center gap-6 mt-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full" style="background:linear-gradient(135deg,var(--neon-blue),transparent)"></div>
+            <div class="text-sm text-slate-300">Automatización inteligente</div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full" style="background:linear-gradient(135deg,var(--neon-magenta),transparent)"></div>
+            <div class="text-sm text-slate-300">Estrategias que convierten</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center">
+        <div class="w-[360px] h-[460px] rounded-3xl overflow-hidden neon-glow float-slow card-tilt glass">
+          <!-- imagen principal - pon en img/chica-selfie.png -->
+          <img src="chicaindex.png" alt="Chica feliz" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS (breve) -->
+    <section id="nosotros" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="bg-gradient-to-r from-slate-800/40 to-slate-900/30 glass rounded-2xl p-8 grid md:grid-cols-2 gap-6 items-center">
+        <div class="fade-up">
+          <h2 class="text-3xl font-extrabold" style="color:var(--neon-violet)">Nosotros</h2>
+          <p class="mt-4 text-slate-300 leading-relaxed">
+            TOLUMAR es un equipo interdisciplinario que combina tecnología, marketing y automatización para llevar marcas al siguiente nivel.
+            Nos enfocamos en resultados medibles, experiencias humanas y procesos escalables.
+          </p>
+          <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+            <div class="p-3 rounded-lg glass">
+              <div class="font-bold">Visión</div>
+              <div class="text-slate-300">Ser referente en soluciones digitales para pymes y emprendedores.</div>
+            </div>
+            <div class="p-3 rounded-lg glass">
+              <div class="font-bold">Misión</div>
+              <div class="text-slate-300">Diseñar procesos que automaticen crecimiento y mejoren la experiencia de cliente.</div>
+            </div>
+          </div>
+        </div>
+
+       <div class="fade-up">
+  <!-- Imagen principal (Lorena) -->
+  <div class="flex flex-col items-center justify-center mt-14 space-y-5">
+    <div class="relative group">
+      <img 
+        src="lorenaimagen.png" 
+        alt="Lorena Medina" 
+        class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover border-4 border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.2)] group-hover:shadow-[0_0_60px_rgba(255,0,180,0.4)] transition duration-700 ease-in-out transform group-hover:scale-105" 
+      />
+      <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-500/20 to-purple-500/30 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+    </div>
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold tracking-wide">Lorena Medina</h3>
+      <p class="text-base text-slate-300 mt-1">Tech-Driven Marketing Manager & Developer</p>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h3 class="text-3xl font-extrabold neon-text">Servicios</h3>
+        <p class="text-slate-300 mt-2 max-w-2xl mx-auto">Soluciones integradas: diseño, automatización, funnels, tiendas online y acompañamiento estratégico.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <article class="p-6 rounded-2xl glass card-tilt fade-up">
+          <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-violet));">
+            <!-- svg icon -->
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="font-bold text-lg">Tiendas Online & E-commerce</h4>
+          <p class="mt-3 text-slate-300 text-sm leading-relaxed">Construcción y optimización de tiendas, integraciones y automatización logística.</p>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="p-6 rounded-2xl glass card-tilt fade-up" style="animation-delay:.08s">
+          <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-magenta),var(--neon-violet));">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="font-bold text-lg">Automatización & Workflows</h4>
+          <p class="mt-3 text-slate-300 text-sm leading-relaxed">Flujos que liberan tiempo: ventas repetibles, atención automatizada y reportes en tiempo real.</p>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="p-6 rounded-2xl glass card-tilt fade-up" style="animation-delay:.16s">
+          <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-magenta));">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="font-bold text-lg">Marketing Estratégico</h4>
+          <p class="mt-3 text-slate-300 text-sm leading-relaxed">Campañas hipersegmentadas, contenido de valor y optimización de conversión.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS / GALERÍA -->
+    <section id="proyectos" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h3 class="text-3xl font-extrabold neon-text">Proyectos</h3>
+        <p class="text-slate-300 mt-2 max-w-2xl mx-auto">Una muestra de algunos trabajos: diseño, tiendas, automatización y resultados tangibles.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Project card -->
+        <figure class="relative rounded-2xl overflow-hidden project-card card-tilt">
+          <img src="project1.png" alt="Proyecto 1" class="w-full h-64 object-cover" />
+          <figcaption class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold">Soporte técnico</h4>
+                <p class="text-xs text-slate-300"> Validación de errores </p>
+              </div>
+              <div class="text-sm text-slate-300">2025</div>
+            </div>
+          </figcaption>
+          <div class="shine absolute inset-0 pointer-events-none"></div>
+        </figure>
+
+        <figure class="relative rounded-2xl overflow-hidden project-card card-tilt" style="animation-delay:.08s">
+          <img src="/project2.png" alt="Proyecto 2" class="w-full h-64 object-cover" />
+          <figcaption class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold">Marketing</h4>
+                <p class="text-xs text-slate-300">Conversión + velocidad</p>
+              </div>
+              <div class="text-sm text-slate-300">2024</div>
+            </div>
+          </figcaption>
+          <div class="shine absolute inset-0 pointer-events-none"></div>
+        </figure>
+
+        <figure class="relative rounded-2xl overflow-hidden project-card card-tilt" style="animation-delay:.16s">
+          <img src="project3.png" alt="Proyecto 3" class="w-full h-64 object-cover" />
+          <figcaption class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold">Generador de reportes </h4>
+                <p class="text-xs text-slate-300">Funnels + CRM</p>
+              </div>
+              <div class="text-sm text-slate-300">2025</div>
+            </div>
+          </figcaption>
+          <div class="shine absolute inset-0 pointer-events-none"></div>
+        </figure>
+      </div>
+    </section>
+<style>
+     #proyectos .neon-text {
+    text-shadow: none !important;
+  }
+
+  /* Si tus tarjetas tienen fondo translúcido, mejoramos contraste */
+  #proyectos .glass {
+    background-color: rgba(125, 96, 131, 0.7);
+    backdrop-filter: blur(6px);
+  }
+
+</style>
+    <!-- NUESTROS SOCIOS -->
+   <section id="socios" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
+  <div class="text-center mb-12">
+    <h3 class="text-4xl font-extrabold neon-text tracking-wide">Nuestros Socios</h3>
+    <p class="text-slate-300 mt-3 text-lg">Confiados por marcas que creen en el futuro.</p>
+  </div>
+
+  <div class="relative overflow-hidden">
+    <div class="partners flex items-center gap-16 animate-scroll">
+      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 hover:opacity-100 transition duration-500 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5]" />
+      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 hover:opacity-100 transition duration-500 hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8]" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 hover:opacity-100 transition duration-500 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff]" />
+      <img src="camsecurity.png" alt="Inlotrans" class="h-24 opacity-95 hover:opacity-100 transition duration-500 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff]" />
+      
+      
+      <!-- Ajuste especial para FIXIT -->
+      <img 
+  src="fixit.png" 
+  alt="Fixit" 
+  class="h-40 object-contain opacity-95 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500" 
+/>
+
+
+      <img src="maxi.png" alt="Partner" class="h-24 opacity-95 hover:opacity-100 transition duration-500 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d]" />
+
+      <!-- Repetición para loop continuo -->
+      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95" />
+      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95" />
+      <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95" />
+      <div class="flex items-center justify-center bg-transparent rounded-lg p-2">
+      <img 
+  src="fixit.png" 
+  alt="Fixit" 
+  class="h-40 object-contain opacity-95 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500" 
+/>
+
+      </div>
+      <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95" />
+    </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    width: 200%;
+    animation: scroll 20s linear infinite;
+  }
+  .neon-text {
+    color: #fff;
+    text-shadow: 0 0 10px #600458, 0 0 20px #1a0434, 0 0 40px #430456;
+  }
+</style>
+
+</section>
+
+<!-- Tailwind + animación personalizada -->
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    width: 200%;
+    animation: scroll 20s linear infinite;
+  }
+
+  .neon-text {
+    color: #fff;
+    text-shadow: 0 0 10px #5b0568, 0 0 20px #721974, 0 0 40px #ea00ff;
+  }
+</style>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="max-w-5xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass rounded-2xl p-8 fade-up">
+          <h3 class="text-2xl font-extrabold neon-text">Contáctenos</h3>
+          <p class="mt-2 text-slate-300">¿Listo para empezar? Cuéntanos tu proyecto y te proponemos el camino.</p>
+
+          <!-- Note: this form is client-side. Replace action with your backend endpoint to receive messages -->
+          <form id="contactForm" class="mt-6 space-y-4">
+            <div>
+              <label class="text-sm text-slate-300">Nombre</label>
+              <input name="name" required class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-blue)] outline-none" placeholder="Tu nombre" />
+            </div>
+
+            <div>
+              <label class="text-sm text-slate-300">Email</label>
+              <input name="email" type="email" required class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-magenta)] outline-none" placeholder="tucorreo@ejemplo.com" />
+            </div>
+
+            <div>
+              <label class="text-sm text-slate-300">Mensaje</label>
+              <textarea name="message" required rows="4" class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <button type="submit" class="px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#FF2D95] text-slate-900 font-semibold shadow-lg hover:scale-105 transition">Enviar Mensaje</button>
+              <div id="formStatus" class="text-sm text-slate-300"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="rounded-2xl p-6 glass">
+          <h4 class="text-lg font-bold">Detalles</h4>
+          <ul class="mt-4 text-slate-300 space-y-3">
+            <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
+            <li><strong>Email:</strong> tolumarw@gmail.com</li>
+            <li><strong>Tel:</strong> +57 321 998 9820</li>
+          </ul>
+
+          <div class="mt-6">
+            <h5 class="text-sm font-semibold text-slate-300">Horario</h5>
+            <p class="text-slate-400 text-sm mt-2">Lun - Dom · 9:00 AM - 6:00 PM</p>
+          </div>
+
+          <div class="mt-6">
+            <h5 class="text-sm font-semibold text-slate-300">Síguenos</h5>
+            <div class="mt-3 flex gap-3">
+              <a href="https://www.instagram.com/tolumar.web/" class="w-10 h-10 rounded-full glass grid place-items-center"><img src="instagram.png" alt="IG" class="w-5" /></a>
+              <a href="https://www.linkedin.com/in/lorena-anjhul-medina-yazo-0703012b0/" class="w-10 h-10 rounded-full glass grid place-items-center"><img src="likedin.png" alt="LI" class="w-5" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-slate-800 py-6">
+    <div class="max-w-7xl mx-auto px-6 text-center text-slate-400 text-sm">
+      © 2025 TOLUMAR • Diseño  y soluciones digitales. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // simple form handler (client-side placeholder)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Enviando...';
+      // Simulate success (replace with fetch to your backend)
+      setTimeout(()=>{
+        status.textContent = '¡Mensaje enviado! Te contactamos pronto.';
+        this.reset();
+      }, 900);
+    });
+
+    // reveal animations on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('fade-up');
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.fade-up').forEach(el=> observer.observe(el));
+
+    // small improvement: pause partners marquee on hover
+    const partners = document.querySelector('.partners');
+    partners.addEventListener('mouseenter', ()=> partners.style.animationPlayState = 'paused');
+    partners.addEventListener('mouseleave', ()=> partners.style.animationPlayState = 'running');
+  </script>
+</body>
+</html>
