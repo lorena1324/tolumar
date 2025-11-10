@@ -573,36 +573,119 @@
 
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="max-w-5xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="glass rounded-2xl p-8 fade-up">
-          <h3 class="text-2xl font-extrabold neon-text">Contáctenos</h3>
-          <p class="mt-2 text-slate-300">¿Listo para empezar? Cuéntanos tu proyecto y te proponemos el camino.</p>
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- FORMULARIO -->
+    <div class="glass rounded-2xl p-8 fade-up">
+      <h3 class="text-2xl font-extrabold neon-text">Contáctenos</h3>
+      <p class="mt-2 text-slate-300">
+        ¿Listo para empezar? Cuéntanos tu proyecto y te proponemos el camino.
+      </p>
 
-          <!-- Note: this form is client-side. Replace action with your backend endpoint to receive messages -->
-          <form id="contactForm" class="mt-6 space-y-4">
-            <div>
-              <label class="text-sm text-slate-300">Nombre</label>
-              <input name="name" required class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-blue)] outline-none" placeholder="Tu nombre" />
-            </div>
-
-            <div>
-              <label class="text-sm text-slate-300">Email</label>
-              <input name="email" type="email" required class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-magenta)] outline-none" placeholder="tucorreo@ejemplo.com" />
-            </div>
-
-            <div>
-              <label class="text-sm text-slate-300">Mensaje</label>
-              <textarea name="message" required rows="4" class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none" placeholder="Cuéntanos sobre tu proyecto"></textarea>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <button type="submit" class="px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#FF2D95] text-slate-900 font-semibold shadow-lg hover:scale-105 transition">Enviar Mensaje</button>
-              <div id="formStatus" class="text-sm text-slate-300"></div>
-            </div>
-          </form>
+      <form id="whatsappForm" class="mt-6 space-y-4">
+        <div>
+          <label class="text-sm text-slate-300">Nombre</label>
+          <input
+            name="name"
+            required
+            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-blue)] outline-none"
+            placeholder="Tu nombre"
+          />
         </div>
+
+        <div>
+          <label class="text-sm text-slate-300">Número de contacto</label>
+          <input
+            name="phone"
+            type="tel"
+            required
+            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-magenta)] outline-none"
+            placeholder="+57 ..."
+          />
+        </div>
+
+        <div>
+          <label class="text-sm text-slate-300">Email</label>
+          <input
+            name="email"
+            type="email"
+            required
+            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none"
+            placeholder="tucorreo@ejemplo.com"
+          />
+        </div>
+
+        <div>
+          <label class="text-sm text-slate-300">Mensaje</label>
+          <textarea
+            name="message"
+            required
+            rows="4"
+            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none"
+            placeholder="Cuéntanos sobre tu proyecto"
+          ></textarea>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button
+            type="submit"
+            class="px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#FF2D95] text-slate-900 font-semibold shadow-lg hover:scale-105 transition"
+          >
+            Enviar por WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- DETALLES -->
+    <div class="rounded-2xl p-6 glass">
+      <h4 class="text-lg font-bold">Detalles</h4>
+      <ul class="mt-4 text-slate-300 space-y-3">
+        <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
+        <li><strong>WhatsApp:</strong> +57 321 998 9820</li>
+        <li><strong>Email:</strong> tolumarw@gmail.com</li>
+      </ul>
+
+      <div class="mt-6">
+        <h5 class="text-sm font-semibold text-slate-300">Horario</h5>
+        <p class="text-slate-400 text-sm mt-2">Lun - Dom · 9:00 AM - 6:00 PM</p>
+      </div>
+
+      <div class="mt-6">
+        <h5 class="text-sm font-semibold text-slate-300">Síguenos</h5>
+        <div class="mt-3 flex gap-3">
+          <a
+            href="https://www.instagram.com/tolumar.web/"
+            class="w-10 h-10 rounded-full glass grid place-items-center"
+            ><img src="instagram.png" alt="IG" class="w-5"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/lorena-anjhul-medina-yazo-0703012b0/"
+            class="w-10 h-10 rounded-full glass grid place-items-center"
+            ><img src="likedin.png" alt="LI" class="w-5"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = this.name.value;
+    const phone = this.phone.value;
+    const email = this.email.value;
+    const message = this.message.value;
+
+    const texto = `*Nuevo mensaje desde TOLUMAR*\n\n👤 *Nombre:* ${name}\n📞 *Contacto:* ${phone}\n📧 *Email:* ${email}\n💬 *Mensaje:* ${message}`;
+    const url = `https://wa.me/573219989820?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
+
 
         <div class="rounded-2xl p-6 glass">
           <h4 class="text-lg font-bold">Detalles</h4>
