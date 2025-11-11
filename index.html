@@ -597,39 +597,77 @@
     }
   }
 </style>
-
+<!-- NUESTROS SOCIOS -->
 <section id="socios" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
   <div class="text-center mb-12">
     <h3 class="text-4xl font-extrabold neon-text tracking-wide">Nuestros Socios</h3>
     <p class="text-slate-300 mt-3 text-lg">Confiados por marcas que creen en el futuro.</p>
   </div>
 
-  <div class="scroll-container">
-    <div class="partners-track">
-      <!-- Primera fila -->
-      <img src="shopify.png" alt="Shopify">
-      <img src="logoemma.png" alt="Emma">
-      <img src="logoinlotrans.png" alt="Inlotrans">
-      <img src="camsecurity.png" alt="CamSecurity">
-      <img src="fixit.png" alt="Fixit" class="h-40">
-      <img src="maxi.png" alt="Maxi Services">
-
-      <!-- Duplicada para bucle continuo -->
-      <img src="shopify.png" alt="Shopify">
-      <img src="logoemma.png" alt="Emma">
-      <img src="logoinlotrans.png" alt="Inlotrans">
-      <img src="camsecurity.png" alt="CamSecurity">
-      <img src="fixit.png" alt="Fixit" class="h-40">
-      <img src="maxi.png" alt="Maxi Services">
+  <div class="relative">
+    <!-- Contenedor con desplazamiento manual y automático -->
+    <div class="partners flex items-center gap-16 animate-scrollX overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x">
+      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5] transition duration-500 snap-start" />
+      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8] transition duration-500 snap-start" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500 snap-start" />
+      <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500 snap-start" />
+      <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500 snap-start" />
+      <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d] transition duration-500 snap-start" />
+      <!-- Repetición para efecto continuo -->
+      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 snap-start" />
+      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 snap-start" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 snap-start" />
+      <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95 snap-start" />
+      <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95 snap-start" />
+      <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95 snap-start" />
     </div>
   </div>
 </section>
-</section>
+
+<style>
+  /* Animación automática + scroll manual */
+  @keyframes scrollX {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .partners {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  /* Velocidad (ajústala más rápido o lento aquí) */
+  .animate-scrollX {
+    animation: scrollX 40s linear infinite;
+  }
+
+  /* Detiene la animación al hacer hover o tocar */
+  .partners:hover {
+    animation-play-state: paused;
+    cursor: grab;
+  }
+
+  /* En móviles, permite arrastrar manualmente */
+  .partners:active {
+    cursor: grabbing;
+  }
+
+  /* Quita scrollbars en móvil */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
 
 <style>
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
 }
 
 .partners {
