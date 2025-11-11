@@ -628,16 +628,16 @@
     <div class="partners-track">
       <!-- Primera fila -->
       <img src="shopify.png" alt="Shopify">
-      <img src="netlify.png" alt="Netlify">
       <img src="brava.png" alt="Brava">
+      <img src="netlify.png" alt="Netlify">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
 
       <!-- Duplicada para bucle continuo -->
       <img src="shopify.png" alt="Shopify">
-      <img src="netlify.png" alt="Netlify">
       <img src="brava.png" alt="Brava">
+      <img src="netlify.png" alt="Netlify">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
@@ -651,66 +651,67 @@
   100% { transform: translateX(-50%); }
 }
 
+/* Contenedor general */
 .scroll-container {
   display: flex;
   overflow: hidden;
   position: relative;
 }
 
-/* 🔹 Animación general de los logos */
+/* Carrusel */
 .partners-track {
   display: flex;
   align-items: center;
   gap: 4rem;
-  animation: scrollX 15s linear infinite;
+  animation: scrollX 18s linear infinite;
   width: max-content;
 }
 
-/* 🔹 Estilo base para todos los logos */
+/* Estilo general de los logos */
 .partners-track img {
-  height: 120px;
-  width: auto;
-  object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(1.1) contrast(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 110px; /* tamaño base grande */
+  max-height: 110px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* ✨ Efecto al pasar el cursor (alumbra tipo neón) */
 .partners-track img:hover {
   transform: scale(1.08);
-  filter: brightness(1.6) drop-shadow(0 0 12px #ff00ff);
 }
 
-/* 🔹 Ajustes específicos para logos más pequeños */
-.partners-track img[alt="Brava"],
-.partners-track img[alt="Fixit"],
-.partners-track img[alt="Shopify"] {
-  height: 160px;
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .partners-track {
+    gap: 3rem;
+    animation-duration: 22s;
+  }
+  .partners-track img {
+    height: 90px;
+    max-height: 90px;
+  }
 }
 
-/* 🔹 Adaptación a pantallas pequeñas */
 @media (max-width: 768px) {
   .partners-track {
     gap: 2rem;
-    animation-duration: 18s;
+    animation-duration: 25s;
   }
-
   .partners-track img {
     height: 80px;
-  }
-
-  .partners-track img[alt="Brava"],
-  .partners-track img[alt="Fixit"],
-  .partners-track img[alt="Shopify"] {
-    height: 110px;
+    max-height: 80px;
   }
 }
 
-/* 🔹 Estilo del texto con efecto neón */
-.neon-text {
-  color: #fff;
-  text-shadow: 0 0 10px #5b0568, 0 0 20px #721974, 0 0 40px #ea00ff;
+@media (max-width: 480px) {
+  .partners-track {
+    gap: 1.5rem;
+    animation-duration: 28s;
+  }
+  .partners-track img {
+    height: 70px;
+    max-height: 70px;
+  }
 }
 </style>
 
