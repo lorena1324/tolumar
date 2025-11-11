@@ -807,7 +807,7 @@
     const email = this.email.value.trim();
     const message = this.message.value.trim();
 
-    const texto = `*Nuevo mensaje desde TOLUMAR*\n\n👤 *Nombre:* ${name}\n📞 *Contacto:* ${phone}\n📧 *Email:* ${email}\n💬 *Mensaje:* ${message}`;
+    const texto = `*Nuevo mensaje desde TOLUMAR*\n\n *Nombre:* ${name}\n *Contacto:* ${phone}\n *Email:* ${email}\n *Mensaje:* ${message}`;
     const url = `https://wa.me/573219989820?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
