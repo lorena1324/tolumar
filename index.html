@@ -715,31 +715,97 @@
 }
 </style>
 
-    <!-- DETALLES -->
-    <div class="rounded-2xl p-6 glass">
-      <h4 class="text-lg font-bold">Detalles</h4>
-      <ul class="mt-4 text-slate-300 space-y-3">
-        <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
-        <li><strong>WhatsApp:</strong> +57 321 998 9820</li>
-        <li><strong>Email:</strong> tolumarw@gmail.com</li>
-      </ul>
+  <!-- SECCIÓN CONTACTO -->
+<section id="contacto" class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start fade-up">
 
-      <div class="mt-6">
-        <h5 class="text-sm font-semibold text-slate-300">Horario</h5>
-        <p class="text-slate-400 text-sm mt-2">Lun - Dom · 9:00 AM - 6:00 PM</p>
+  <!-- FORMULARIO DE CONTACTO -->
+  <div class="rounded-2xl p-6 glass">
+    <h3 class="text-2xl font-bold mb-6 text-white">Contáctanos</h3>
+    <form id="whatsappForm" class="space-y-4">
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Tu nombre" 
+        required 
+        class="w-full p-3 rounded-lg bg-slate-800 text-white border border-slate-700 placeholder-slate-400 focus:outline-none focus:border-fuchsia-500 transition" 
+      />
+      <input 
+        type="tel" 
+        name="phone" 
+        placeholder="Teléfono o WhatsApp" 
+        required 
+        class="w-full p-3 rounded-lg bg-slate-800 text-white border border-slate-700 placeholder-slate-400 focus:outline-none focus:border-fuchsia-500 transition" 
+      />
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Correo electrónico" 
+        required 
+        class="w-full p-3 rounded-lg bg-slate-800 text-white border border-slate-700 placeholder-slate-400 focus:outline-none focus:border-fuchsia-500 transition" 
+      />
+      <textarea 
+        name="message" 
+        placeholder="Tu mensaje..." 
+        rows="4" 
+        required 
+        class="w-full p-3 rounded-lg bg-slate-800 text-white border border-slate-700 placeholder-slate-400 focus:outline-none focus:border-fuchsia-500 transition">
+      </textarea>
+
+      <!-- BOTÓN ESTILO TOLUMAR -->
+      <button 
+        type="submit" 
+        class="w-full py-3 rounded-full font-semibold text-white text-lg 
+               bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 
+               shadow-[0_0_20px_rgba(236,72,153,0.5)] 
+               transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(236,72,153,0.7)]">
+        Enviar  →
+      </button>
+    </form>
+  </div>
+
+  <!-- DETALLES DE CONTACTO -->
+  <div class="rounded-2xl p-6 glass">
+    <h4 class="text-lg font-bold text-white">Detalles</h4>
+    <ul class="mt-4 text-slate-300 space-y-3">
+      <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
+      <li><strong>WhatsApp:</strong> +57 321 998 9820</li>
+      <li><strong>Email:</strong> tolumarw@gmail.com</li>
+    </ul>
+
+    <div class="mt-6">
+      <h5 class="text-sm font-semibold text-slate-300">Horario</h5>
+      <p class="text-slate-400 text-sm mt-2">Lun - Dom · 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <div class="mt-6">
+      <h5 class="text-sm font-semibold text-slate-300">Síguenos</h5>
+      <div class="mt-3 flex gap-3">
+        <a 
+          href="https://www.instagram.com/tolumar.web/" 
+          target="_blank"
+          class="w-10 h-10 rounded-full glass grid place-items-center hover:scale-110 transition-transform">
+          <img src="instagram.png" alt="Instagram" class="w-5" />
+        </a>
+        <a 
+          href="https://www.linkedin.com/in/lorena-anjhul-medina-yazo-0703012b0/" 
+          target="_blank"
+          class="w-10 h-10 rounded-full glass grid place-items-center hover:scale-110 transition-transform">
+          <img src="likedin.png" alt="LinkedIn" class="w-5" />
+        </a>
       </div>
-
-      
+    </div>
+  </div>
 </section>
 
+<!-- SCRIPT WHATSAPP -->
 <script>
   document.getElementById("whatsappForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = this.name.value;
-    const phone = this.phone.value;
-    const email = this.email.value;
-    const message = this.message.value;
+    const name = this.name.value.trim();
+    const phone = this.phone.value.trim();
+    const email = this.email.value.trim();
+    const message = this.message.value.trim();
 
     const texto = `*Nuevo mensaje desde TOLUMAR*\n\n👤 *Nombre:* ${name}\n📞 *Contacto:* ${phone}\n📧 *Email:* ${email}\n💬 *Mensaje:* ${message}`;
     const url = `https://wa.me/573219989820?text=${encodeURIComponent(texto)}`;
@@ -747,69 +813,3 @@
     window.open(url, "_blank");
   });
 </script>
-
-
-        <div class="rounded-2xl p-6 glass">
-          <h4 class="text-lg font-bold">Detalles</h4>
-          <ul class="mt-4 text-slate-300 space-y-3">
-            <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
-            <li><strong>Email:</strong> tolumarw@gmail.com</li>
-            <li><strong>Tel:</strong> +57 321 998 9820</li>
-          </ul>
-
-          <div class="mt-6">
-            <h5 class="text-sm font-semibold text-slate-300">Horario</h5>
-            <p class="text-slate-400 text-sm mt-2">Lun - Dom · 9:00 AM - 6:00 PM</p>
-          </div>
-
-          <div class="mt-6">
-            <h5 class="text-sm font-semibold text-slate-300">Síguenos</h5>
-            <div class="mt-3 flex gap-3">
-              <a href="https://www.instagram.com/tolumar.web/" class="w-10 h-10 rounded-full glass grid place-items-center"><img src="instagram.png" alt="IG" class="w-5" /></a>
-              <a href="https://www.linkedin.com/in/lorena-anjhul-medina-yazo-0703012b0/" class="w-10 h-10 rounded-full glass grid place-items-center"><img src="likedin.png" alt="LI" class="w-5" /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="mt-12 border-t border-slate-800 py-6">
-    <div class="max-w-7xl mx-auto px-6 text-center text-slate-400 text-sm">
-      © 2025 TOLUMAR • Diseño  y soluciones digitales. Todos los derechos reservados.
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // simple form handler (client-side placeholder)
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const status = document.getElementById('formStatus');
-      status.textContent = 'Enviando...';
-      // Simulate success (replace with fetch to your backend)
-      setTimeout(()=>{
-        status.textContent = '¡Mensaje enviado! Te contactamos pronto.';
-        this.reset();
-      }, 900);
-    });
-
-    // reveal animations on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('fade-up');
-        }
-      });
-    }, {threshold: 0.12});
-    document.querySelectorAll('.fade-up').forEach(el=> observer.observe(el));
-
-    // small improvement: pause partners marquee on hover
-    const partners = document.querySelector('.partners');
-    partners.addEventListener('mouseenter', ()=> partners.style.animationPlayState = 'paused');
-    partners.addEventListener('mouseleave', ()=> partners.style.animationPlayState = 'running');
-  </script>
-</body>
-</html>
