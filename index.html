@@ -511,31 +511,71 @@
 
 </style>
   <!-- NUESTROS SOCIOS -->
-<!-- NUESTROS SOCIOS -->
+<style>
+  /* Animación de desplazamiento continuo */
+  @keyframes scrollX {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .scroll-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .partners-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    animation: scrollX 30s linear infinite;
+    width: max-content;
+  }
+
+  /* Duplicamos el track para efecto infinito */
+  .partners-track img {
+    flex-shrink: 0;
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    .partners-track {
+      gap: 2rem;
+      animation-duration: 40s;
+    }
+    .partners-track img {
+      height: 70px;
+    }
+  }
+</style>
+
+<!-- 🟣 NUESTROS SOCIOS -->
 <section id="socios" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
   <div class="text-center mb-12">
     <h3 class="text-4xl font-extrabold neon-text tracking-wide">Nuestros Socios</h3>
     <p class="text-slate-300 mt-3 text-lg">Confiados por marcas que creen en el futuro.</p>
   </div>
 
-  <div class="relative overflow-hidden">
-    <div class="partners flex items-center gap-12 animate-scroll">
-      <img src="shopify.png" alt="Shopify" class="h-16 md:h-24 opacity-90 hover:opacity-100 transition hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5]" />
-      <img src="logoemma.png" alt="Emma" class="h-16 md:h-24 opacity-90 hover:opacity-100 transition hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8]" />
-      <img src="logoinlotrans.png" alt="Inlotrans" class="h-16 md:h-24 opacity-90 hover:opacity-100 transition hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff]" />
-      <img src="camsecurity.png" alt="CamSecurity" class="h-16 md:h-24 opacity-90 hover:opacity-100 transition hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff]" />
-      <img src="fixit.png" alt="Fixit" class="h-24 md:h-40 object-contain opacity-90 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition" />
-      <img src="maxi.png" alt="Maxi Services" class="h-16 md:h-24 opacity-90 hover:opacity-100 transition hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d]" />
+  <div class="scroll-container">
+    <div class="partners-track">
+      <img src="shopify.png" alt="Shopify" class="h-24 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5] transition duration-500" />
+      <img src="logoemma.png" alt="Emma" class="h-24 hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8] transition duration-500" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500" />
+      <img src="camsecurity.png" alt="CamSecurity" class="h-24 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500" />
+      <img src="fixit.png" alt="Fixit" class="h-36 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500" />
+      <img src="maxi.png" alt="MaxiServices" class="h-24 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d] transition duration-500" />
 
-      <!-- Duplicado para loop continuo -->
-      <img src="shopify.png" alt="Shopify" class="h-16 md:h-24 opacity-90" />
-      <img src="logoemma.png" alt="Emma" class="h-16 md:h-24 opacity-90" />
-      <img src="logoinlotrans.png" alt="Inlotrans" class="h-16 md:h-24 opacity-90" />
-      <img src="camsecurity.png" alt="CamSecurity" class="h-16 md:h-24 opacity-90" />
-      <img src="fixit.png" alt="Fixit" class="h-24 md:h-40 object-contain opacity-90" />
-      <img src="maxi.png" alt="Maxi Services" class="h-16 md:h-24 opacity-90" />
+      <!-- Duplicación para loop continuo -->
+      <img src="shopify.png" alt="Shopify" class="h-24" />
+      <img src="logoemma.png" alt="Emma" class="h-24" />
+      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24" />
+      <img src="camsecurity.png" alt="CamSecurity" class="h-24" />
+      <img src="fixit.png" alt="Fixit" class="h-36" />
+      <img src="maxi.png" alt="MaxiServices" class="h-24" />
     </div>
   </div>
+</section>
+
 </section>
 
 <style>
@@ -547,9 +587,44 @@
 .partners {
   display: flex;
   width: max-content;
-  animation: scroll 25s linear infinite;
+animation: scrollX 30s linear infinite;
   will-change: transform;
 }
+<style>
+  @keyframes scrollX {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .scroll-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .partners-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    animation: scrollX 15s linear infinite; /* ⚡ más rápido */
+    width: max-content;
+  }
+
+  .partners-track img {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .partners-track {
+      gap: 2rem;
+      animation-duration: 18s; /* un poco más suave en celular */
+    }
+    .partners-track img {
+      height: 70px;
+    }
+  }
+</style>
+
 
 @media (max-width: 768px) {
   .partners {
@@ -660,7 +735,7 @@
             type="submit"
             class="px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#FF2D95] text-slate-900 font-semibold shadow-lg hover:scale-105 transition"
           >
-            Enviar por WhatsApp
+            Enviar
           </button>
         </div>
       </form>
