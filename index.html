@@ -635,7 +635,7 @@
 .partners {
   display: flex;
   width: max-content;
-animation: scrollX 30s linear infinite;
+animation: scrollX -70s linear infinite;
   will-change: transform;
 }
 
@@ -650,13 +650,15 @@ animation: scrollX 30s linear infinite;
     position: relative;
   }
 
-  .partners-track {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    animation: scrollX 15s linear infinite; /* ⚡ más rápido */
-    width: max-content;
-  }
+ .partners-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: scrollX 12s linear infinite; /* ← más rápido */
+  width: max-content;
+}
+
+
 
   .partners-track img {
     flex-shrink: 0;
@@ -673,7 +675,7 @@ animation: scrollX 30s linear infinite;
   }
 </style>
 
-
+<style>
 @media (max-width: 768px) {
   .partners {
     gap: 8rem; /* más espacio entre logos en móvil */
@@ -683,6 +685,7 @@ animation: scrollX 30s linear infinite;
     height: 60px; /* ajusta altura en móviles */
   }
 }
+</style>
 </style>
 
 
