@@ -628,16 +628,16 @@
     <div class="partners-track">
       <!-- Primera fila -->
       <img src="shopify.png" alt="Shopify">
-      <img src="brava.png" alt="Brava">
       <img src="netlify.png" alt="Netlify">
+      <img src="brava.png" alt="Brava">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
 
       <!-- Duplicada para bucle continuo -->
       <img src="shopify.png" alt="Shopify">
-      <img src="brava.png" alt="Brava">
       <img src="netlify.png" alt="Netlify">
+      <img src="brava.png" alt="Brava">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
@@ -657,6 +657,7 @@
   position: relative;
 }
 
+/* 🔹 Animación general de los logos */
 .partners-track {
   display: flex;
   align-items: center;
@@ -665,133 +666,53 @@
   width: max-content;
 }
 
+/* 🔹 Estilo base para todos los logos */
 .partners-track img {
-  height: 120px; /* 🔹 tamaño uniforme para todos */
+  height: 120px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
   filter: brightness(1.1) contrast(1.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* ✨ Efecto al pasar el cursor (alumbra tipo neón) */
 .partners-track img:hover {
-  transform: scale(1.08); /* 🔹 pequeño zoom al pasar el mouse */
+  transform: scale(1.08);
+  filter: brightness(1.6) drop-shadow(0 0 12px #ff00ff);
 }
 
+/* 🔹 Ajustes específicos para logos más pequeños */
+.partners-track img[alt="Brava"],
+.partners-track img[alt="Fixit"],
+.partners-track img[alt="Shopify"] {
+  height: 160px;
+}
+
+/* 🔹 Adaptación a pantallas pequeñas */
 @media (max-width: 768px) {
   .partners-track {
     gap: 2rem;
     animation-duration: 18s;
   }
+
   .partners-track img {
-    height: 80px; /* 🔹 tamaño uniforme en móviles */
+    height: 80px;
+  }
+
+  .partners-track img[alt="Brava"],
+  .partners-track img[alt="Fixit"],
+  .partners-track img[alt="Shopify"] {
+    height: 110px;
   }
 }
+
+/* 🔹 Estilo del texto con efecto neón */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 10px #5b0568, 0 0 20px #721974, 0 0 40px #ea00ff;
+}
 </style>
-
-
-</section>
-
-<style>
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-scroll {
-    width: 200%;
-    animation: scroll 20s linear infinite;
-  }
-  .neon-text {
-    color: #fff;
-    text-shadow: 0 0 10px #600458, 0 0 20px #1a0434, 0 0 40px #430456;
-  }
-</style>
-
-</section>
-
-<!-- Tailwind + animación personalizada -->
-<style>
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .animate-scroll {
-    width: 200%;
-    animation: scroll 20s linear infinite;
-  }
-
-  .neon-text {
-    color: #fff;
-    text-shadow: 0 0 10px #5b0568, 0 0 20px #721974, 0 0 40px #ea00ff;
-  }
-</style>
-
-    </section>
-
-    <section id="contacto" class="max-w-5xl mx-auto px-6 py-16">
-  <div class="grid md:grid-cols-2 gap-8">
-    <!-- FORMULARIO -->
-    <div class="glass rounded-2xl p-8 fade-up">
-      <h3 class="text-2xl font-extrabold neon-text">Contáctenos</h3>
-      <p class="mt-2 text-slate-300">
-        ¿Listo para empezar? Cuéntanos tu proyecto y te proponemos el camino.
-      </p>
-
-      <form id="whatsappForm" class="mt-6 space-y-4">
-        <div>
-          <label class="text-sm text-slate-300">Nombre</label>
-          <input
-            name="name"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-blue)] outline-none"
-            placeholder="Tu nombre"
-          />
-        </div>
-
-        <div>
-          <label class="text-sm text-slate-300">Número de contacto</label>
-          <input
-            name="phone"
-            type="tel"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-magenta)] outline-none"
-            placeholder="+57 ..."
-          />
-        </div>
-
-        <div>
-          <label class="text-sm text-slate-300">Email</label>
-          <input
-            name="email"
-            type="email"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none"
-            placeholder="tucorreo@ejemplo.com"
-          />
-        </div>
-
-        <div>
-          <label class="text-sm text-slate-300">Mensaje</label>
-          <textarea
-            name="message"
-            required
-            rows="4"
-            class="w-full mt-2 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-1 focus:ring-[color:var(--neon-violet)] outline-none"
-            placeholder="Cuéntanos sobre tu proyecto"
-          ></textarea>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <button
-            type="submit"
-            class="px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#FF2D95] text-slate-900 font-semibold shadow-lg hover:scale-105 transition"
-          >
-            Enviar
-          </button>
-        </div>
-      </form>
-    </div>
 
     <!-- DETALLES -->
     <div class="rounded-2xl p-6 glass">
