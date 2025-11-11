@@ -598,6 +598,7 @@
   }
 </style>
 <!-- NUESTROS SOCIOS -->
+<!-- NUESTROS SOCIOS -->
 <section id="socios" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
   <div class="text-center mb-12">
     <h3 class="text-4xl font-extrabold neon-text tracking-wide">Nuestros Socios</h3>
@@ -605,24 +606,79 @@
   </div>
 
   <div class="relative">
-    <!-- Contenedor con desplazamiento manual y automático -->
-    <div class="partners flex items-center gap-16 animate-scrollX overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x">
-      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5] transition duration-500 snap-start" />
-      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8] transition duration-500 snap-start" />
-      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500 snap-start" />
-      <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500 snap-start" />
-      <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500 snap-start" />
-      <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d] transition duration-500 snap-start" />
-      <!-- Repetición para efecto continuo -->
-      <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 snap-start" />
-      <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 snap-start" />
-      <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 snap-start" />
-      <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95 snap-start" />
-      <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95 snap-start" />
-      <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95 snap-start" />
+    <!-- Contenedor principal -->
+    <div class="partners-container overflow-x-auto md:overflow-hidden scrollbar-hide">
+      <div class="partners flex items-center gap-16 animate-scrollX md:animate-scrollX">
+        <img src="shopify.png" alt="Shopify" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ffe5] transition duration-500" />
+        <img src="logoemma.png" alt="Emma" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#ff00c8] transition duration-500" />
+        <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500" />
+        <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00bfff] transition duration-500" />
+        <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95 hover:scale-110 hover:drop-shadow-[0_0_25px_#ffd500] transition duration-500" />
+        <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95 hover:scale-110 hover:drop-shadow-[0_0_15px_#00ff9d] transition duration-500" />
+        <!-- Repetición para loop continuo -->
+        <img src="shopify.png" alt="Shopify" class="h-24 opacity-95" />
+        <img src="logoemma.png" alt="Emma" class="h-24 opacity-95" />
+        <img src="logoinlotrans.png" alt="Inlotrans" class="h-24 opacity-95" />
+        <img src="camsecurity.png" alt="CamSecurity" class="h-24 opacity-95" />
+        <img src="fixit.png" alt="Fixit" class="h-40 object-contain opacity-95" />
+        <img src="maxi.png" alt="Maxi Services" class="h-24 opacity-95" />
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Animación automática en escritorio */
+  @keyframes scrollX {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .partners {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  /* Solo se anima en PC */
+  @media (min-width: 768px) {
+    .animate-scrollX {
+      animation: scrollX 35s linear infinite;
+    }
+  }
+
+  /* En celular: arrastre manual */
+  @media (max-width: 767px) {
+    .partners-container {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .partners img {
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Pausar al pasar el mouse */
+  .partners:hover {
+    animation-play-state: paused;
+    cursor: grab;
+  }
+
+  /* Estilo al arrastrar */
+  .partners:active {
+    cursor: grabbing;
+  }
+
+  /* Ocultar scrollbars */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
 
 <style>
   /* Animación automática + scroll manual */
