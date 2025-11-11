@@ -601,22 +601,23 @@
   <div class="scroll-container">
     <div class="partners-track">
       <!-- Primera fila -->
-       <img src="cpack.png" alt="Emma">
+      <img src="cpack.png" alt="Cpack">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="logoemma.png" alt="Emma">
       <img src="logoinlotrans.png" alt="Inlotrans">
-      <img src="fixit.png" alt="Fixit" class="h-40">
+      <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
 
       <!-- Duplicada para bucle continuo -->
       <img src="logoemma.png" alt="Emma">
       <img src="logoinlotrans.png" alt="Inlotrans">
       <img src="camsecurity.png" alt="CamSecurity">
-      <img src="fixit.png" alt="Fixit" class="h-40">
+      <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
     </div>
   </div>
 </section>
+
 <section id="socios" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
   <div class="text-center mb-12">
     <h3 class="text-4xl font-extrabold neon-text tracking-wide">Nuestros Socios</h3>
@@ -626,80 +627,64 @@
   <div class="scroll-container">
     <div class="partners-track">
       <!-- Primera fila -->
-    <img src="shopify.png" alt="Shopify">
+      <img src="shopify.png" alt="Shopify">
       <img src="brava.png" alt="Brava">
-      <img src="netlify.png" alt="netlify">
+      <img src="netlify.png" alt="Netlify">
       <img src="camsecurity.png" alt="CamSecurity">
-      <img src="fixit.png" alt="Fixit" class="h-40">
+      <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
 
       <!-- Duplicada para bucle continuo -->
       <img src="shopify.png" alt="Shopify">
-      <img src="brava.png" alt="Emma">
-      <img src="netlify.png" alt="Inlotrans">
+      <img src="brava.png" alt="Brava">
+      <img src="netlify.png" alt="Netlify">
       <img src="camsecurity.png" alt="CamSecurity">
-      <img src="fixit.png" alt="Fixit" class="h-40">
+      <img src="fixit.png" alt="Fixit">
       <img src="maxi.png" alt="Maxi Services">
     </div>
   </div>
 </section>
-</section>
 
 <style>
-@keyframes scroll {
+@keyframes scrollX {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.partners {
+.scroll-container {
   display: flex;
-  width: max-content;
-animation: scrollX -40s linear infinite;
-  will-change: transform;
+  overflow: hidden;
+  position: relative;
 }
 
-  @keyframes scrollX {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: scrollX 15s linear infinite;
+  width: max-content;
+}
 
-  .scroll-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-  }
+.partners-track img {
+  height: 120px; /* 🔹 tamaño uniforme para todos */
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(1.1) contrast(1.1);
+  transition: transform 0.3s ease;
+}
 
-  .partners-track {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    animation: scrollX 15s linear infinite; /* ⚡ más rápido */
-    width: max-content;
-  }
+.partners-track img:hover {
+  transform: scale(1.08); /* 🔹 pequeño zoom al pasar el mouse */
+}
 
-  .partners-track img {
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 768px) {
-    .partners-track {
-      gap: 2rem;
-      animation-duration: 18s; /* un poco más suave en celular */
-    }
-    .partners-track img {
-      height: 70px;
-    }
-  }
-</style>
-
-<style>
 @media (max-width: 768px) {
-  .partners {
-    gap: 8rem; /* más espacio entre logos en móvil */
-    animation-duration: 35s; /* más lento para que se vean bien */
+  .partners-track {
+    gap: 2rem;
+    animation-duration: 18s;
   }
-  #socios img {
-    height: 60px; /* ajusta altura en móviles */
+  .partners-track img {
+    height: 80px; /* 🔹 tamaño uniforme en móviles */
   }
 }
 </style>
