@@ -8,25 +8,17 @@
   <link rel="shortcut icon" href="logotolumar.png" />
 
   <style>
-    /* Fuente general */
     body {
       font-family: 'Century Gothic', sans-serif;
-      background-color: #0a0a14; /* fondo oscuro elegante */
+      background-color: #0a0a14;
       color: white;
       margin: 0;
       padding: 0;
     }
 
-    /* Efecto de brillo suave */
     @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.5;
-        transform: scale(1.05);
-      }
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.05); }
     }
 
     .halo-animado {
@@ -36,45 +28,32 @@
 </head>
 
 <body class="overflow-x-hidden">
-  <!-- LOGO PRINCIPAL TOLUMAR -->
   <section id="logo-tolumar"
     class="flex flex-col items-center justify-center text-center py-24 px-6 relative overflow-hidden"
-    style="
-      background: radial-gradient(circle at center, rgba(255,150,255,0.10) 0%, rgba(30,10,60,0.15) 45%, rgba(10,10,20,0.98) 100%);
-    ">
+    style="background: radial-gradient(circle at center, rgba(255,150,255,0.10) 0%, rgba(30,10,60,0.15) 45%, rgba(10,10,20,0.98) 100%);">
 
-    <!-- Halo suave y animado detrás del logo -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <div class="w-96 h-96 rounded-full blur-3xl opacity-30 halo-animado"
         style="background: radial-gradient(circle, rgba(255,45,149,0.4), rgba(138,43,226,0.2), transparent 70%);">
       </div>
     </div>
 
-    <!-- Logo -->
-    <img 
-      src="logotolumar.png" 
-      alt="Logo TOLUMAR" 
-      class="w-64 md:w-96 relative z-10"
-    />
+    <img src="logotolumar.png" alt="Logo TOLUMAR" class="w-64 md:w-96 relative z-10" />
 
-    <!-- Nombre -->
     <h1 class="hero-title text-5xl md:text-7xl font-extrabold mt-6 tracking-tight text-white relative z-10">
       TOLUMAR
     </h1>
 
-    <!-- Lema -->
     <p class="mt-4 text-white text-lg md:text-xl max-w-2xl relative z-10">
       Futurista · Innovación · Marketing con alma y amor.
     </p>
 
-    <!-- Línea decorativa -->
     <div class="h-[3px] w-32 bg-gradient-to-r from-[#FF2D95] via-[#8A2BE2] to-[#00D1FF] mt-6 rounded-full relative z-10"></div>
   </section>
 </body>
 </html>
 
   <style>
-    /* Palette: electric blue (#00D1FF), violet (#8A2BE2), magenta (#FF2D95) */
     :root{
       --neon-blue: #af2ba2;
       --neon-violet: #8A2BE2;
@@ -83,7 +62,6 @@
       --glass-strong: rgba(255,255,255,0.10);
     }
 
-    /* subtle glows */
     .neon-text {
       text-shadow: 0 0 8px rgba(0,209,255,0.18), 0 0 20px rgba(138,43,226,0.06);
     }
@@ -91,7 +69,6 @@
       box-shadow: 0 6px 30px rgba(0,209,255,0.08), inset 0 1px 0 rgba(255,255,255,0.03);
     }
 
-    /* floating animation */
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
@@ -99,14 +76,12 @@
     }
     .float-slow { animation: float 6s ease-in-out infinite; }
 
-    /* fade up */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .fade-up { animation: fadeUp 0.9s ease forwards; opacity: 0; }
 
-    /* card hover tilt + glow */
     .card-tilt {
       transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s ease;
       transform-origin: center;
@@ -116,14 +91,12 @@
       box-shadow: 0 12px 40px rgba(138,43,226,0.12);
     }
 
-    /* subtle backdrop glass */
     .glass {
       background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(6px);
     }
 
-    /* partners marquee */
     .partners {
       display: flex;
       gap: 4rem;
@@ -135,7 +108,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* project image hover shine */
     .shine::after {
       content: "";
       position: absolute;
@@ -154,7 +126,6 @@
       opacity: 1;
     }
 
-    /* simple responsive tweaks for long titles */
     @media (max-width: 640px) {
       .hero-title { font-size: 2.0rem; }
     }
@@ -178,23 +149,23 @@
         <a href="#servicios" class="hover:text-white transition">Servicios</a>
         <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
         <a href="#socios" class="hover:text-white transition">Nuestros Socios</a>
+        <a href="https://portmarketo.netlify.app/" target="_blank" rel="noopener" class="hover:text-white transition">Portafolio</a>
         <a href="#contacto" class="hover:text-white transition">Contáctenos</a>
       </nav>
 
       <div class="md:hidden">
-        <!-- simple mobile anchor -->
         <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="px-3 py-2 rounded-md glass">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- mobile menu -->
     <div id="mobileMenu" class="hidden px-6 pb-4 md:hidden bg-slate-900/80 glass">
       <a href="#nosotros" class="block py-2 border-b border-slate-800">Nosotros</a>
       <a href="#servicios" class="block py-2 border-b border-slate-800">Servicios</a>
       <a href="#proyectos" class="block py-2 border-b border-slate-800">Proyectos</a>
       <a href="#socios" class="block py-2 border-b border-slate-800">Nuestros Socios</a>
+      <a href="https://portmarketo.netlify.app/" target="_blank" rel="noopener" class="block py-2 border-b border-slate-800">Portafolio</a>
       <a href="#contacto" class="block py-2">Contáctenos</a>
     </div>
   </header>
@@ -214,10 +185,15 @@
           Creamos experiencias digitales con alma: estrategia + tecnología + creatividad. Transformamos ideas en productos y ventas con procesos automatizados y diseño humano.
         </p>
 
-        <div class="flex gap-4 items-center">
+        <div class="flex gap-4 items-center flex-wrap">
           <a href="#proyectos" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#00D1FF] to-[#8A2BE2] text-slate-900 font-semibold shadow-lg transform transition hover:scale-105">
             Ver Proyectos
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://portmarketo.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#FF2D95] to-[#8A2BE2] text-slate-900 font-semibold shadow-lg transform transition hover:scale-105">
+            Ver Portafolio
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
           <button id="contactCta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})" class="px-4 py-2 rounded-full border border-slate-700 glass hover:scale-105 transition">
@@ -239,13 +215,12 @@
 
       <div class="relative flex justify-center">
         <div class="w-[360px] h-[460px] rounded-3xl overflow-hidden neon-glow float-slow card-tilt glass">
-          <!-- imagen principal - pon en img/chica-selfie.png -->
           <img src="chicaindex.png" alt="Chica feliz" class="w-full h-full object-cover" />
         </div>
       </div>
     </section>
 
-    <!-- NOSOTROS (breve) -->
+    <!-- NOSOTROS -->
     <section id="nosotros" class="max-w-6xl mx-auto px-6 py-12">
       <div class="bg-gradient-to-r from-slate-800/40 to-slate-900/30 glass rounded-2xl p-8 grid md:grid-cols-2 gap-6 items-center">
         <div class="fade-up">
@@ -267,7 +242,6 @@
         </div>
 
        <div class="fade-up">
-  <!-- Imagen principal (Lorena) -->
   <div class="flex flex-col items-center justify-center mt-14 space-y-5">
     <div class="relative group">
       <img 
@@ -294,17 +268,14 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Service 1 -->
         <article class="p-6 rounded-2xl glass card-tilt fade-up">
           <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-violet));">
-            <!-- svg icon -->
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h4 class="font-bold text-lg">Tiendas Online & E-commerce</h4>
           <p class="mt-3 text-slate-300 text-sm leading-relaxed">Construcción y optimización de tiendas, integraciones y automatización logística.</p>
         </article>
 
-        <!-- Service 2 -->
         <article class="p-6 rounded-2xl glass card-tilt fade-up" style="animation-delay:.08s">
           <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-magenta),var(--neon-violet));">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
@@ -313,7 +284,6 @@
           <p class="mt-3 text-slate-300 text-sm leading-relaxed">Flujos que liberan tiempo: ventas repetibles, atención automatizada y reportes en tiempo real.</p>
         </article>
 
-        <!-- Service 3 -->
         <article class="p-6 rounded-2xl glass card-tilt fade-up" style="animation-delay:.16s">
           <div class="w-12 h-12 rounded-md flex items-center justify-center mb-4" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-magenta));">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18" stroke="#041226" stroke-width="2" stroke-linecap="round"/></svg>
@@ -336,7 +306,6 @@
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-    <!-- PLAN 1: RAÍCES -->
     <article class="p-8 rounded-3xl glass card-tilt fade-up">
       <div class="mb-4">
         <h4 class="font-bold text-2xl mb-1" style="color:var(--neon-blue)">Plan Raíces</h4>
@@ -359,7 +328,6 @@
       </div>
     </article>
 
-    <!-- PLAN 2: EXPANSIÓN -->
     <article class="p-8 rounded-3xl glass card-tilt fade-up" style="animation-delay:.1s">
       <div class="mb-4">
         <h4 class="font-bold text-2xl mb-1" style="color:var(--neon-violet)">Plan Expansión</h4>
@@ -383,7 +351,6 @@
       </div>
     </article>
 
-    <!-- PLAN 3: IMPACTO -->
     <article class="p-8 rounded-3xl glass card-tilt fade-up" style="animation-delay:.2s">
       <div class="mb-4">
         <h4 class="font-bold text-2xl mb-1" style="color:var(--neon-magenta)">Plan Impacto</h4>
@@ -407,7 +374,6 @@
       </div>
     </article>
 
-    <!-- PLAN 4: DIGITAL PRO -->
     <article class="p-8 rounded-3xl glass card-tilt fade-up" style="animation-delay:.3s">
       <div class="mb-4">
         <h4 class="font-bold text-2xl mb-1" style="color:#00D1FF">Plan Digital Pro</h4>
@@ -454,7 +420,6 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- Project card -->
         <figure class="relative rounded-2xl overflow-hidden project-card card-tilt">
           <img src="project1.png" alt="Proyecto 1" class="w-full h-64 object-cover" />
           <figcaption class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass">
@@ -497,13 +462,19 @@
           <div class="shine absolute inset-0 pointer-events-none"></div>
         </figure>
       </div>
+
+      <div class="text-center mt-10">
+        <a href="https://portmarketo.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-slate-700 glass hover:scale-105 transition">
+          Ver portafolio completo de marketing
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
     </section>
 <style>
      #proyectos .neon-text {
     text-shadow: none !important;
   }
 
-  /* Si tus tarjetas tienen fondo translúcido, mejoramos contraste */
   #proyectos .glass {
     background-color: rgba(125, 96, 131, 0.7);
     backdrop-filter: blur(6px);
@@ -512,7 +483,6 @@
 </style>
   <!-- NUESTROS SOCIOS -->
 <style>
-  /* Animación de desplazamiento continuo */
   @keyframes scrollX {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -532,12 +502,10 @@
     width: max-content;
   }
 
-  /* Duplicamos el track para efecto infinito */
   .partners-track img {
     flex-shrink: 0;
   }
 
-  /* Ajustes responsivos */
   @media (max-width: 768px) {
     .partners-track {
       gap: 2rem;
@@ -600,14 +568,11 @@
 
   <div class="scroll-container">
     <div class="partners-track">
-      <!-- Primera fila -->
       <img src="cpack.png" alt="Cpack">
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
     
 
-      <!-- Duplicada para bucle continuo -->
-      
       <img src="camsecurity.png" alt="CamSecurity">
       <img src="fixit.png" alt="Fixit">
       
@@ -623,7 +588,6 @@
 
   <div class="scroll-container">
     <div class="partners-track">
-      <!-- Primera fila -->
       <img src="shopify.png" alt="Shopify">
       <img src="brava.png" alt="Brava">
       <img src="netlify.png" alt="Netlify">
@@ -631,7 +595,6 @@
       <img src="fixit.png" alt="Fixit">
       
 
-      <!-- Duplicada para bucle continuo -->
       <img src="shopify.png" alt="Shopify">
       <img src="brava.png" alt="Brava">
       <img src="netlify.png" alt="Netlify">
@@ -648,14 +611,12 @@
   100% { transform: translateX(-50%); }
 }
 
-/* Contenedor general */
 .scroll-container {
   display: flex;
   overflow: hidden;
   position: relative;
 }
 
-/* Carrusel */
 .partners-track {
   display: flex;
   align-items: center;
@@ -664,10 +625,9 @@
   width: max-content;
 }
 
-/* Estilo general de los logos */
 .partners-track img {
   flex-shrink: 0;
-  height: 110px; /* tamaño base grande */
+  height: 110px;
   max-height: 110px;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -677,7 +637,6 @@
   transform: scale(1.08);
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 1024px) {
   .partners-track {
     gap: 3rem;
@@ -715,7 +674,6 @@
   <!-- SECCIÓN CONTACTO -->
 <section id="contacto" class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start fade-up">
 
-  <!-- FORMULARIO DE CONTACTO -->
   <div class="rounded-2xl p-6 glass">
     <h3 class="text-2xl font-bold mb-6 text-white">Contáctanos</h3>
     <form id="whatsappForm" class="space-y-4">
@@ -748,7 +706,6 @@
         class="w-full p-3 rounded-lg bg-slate-800 text-white border border-slate-700 placeholder-slate-400 focus:outline-none focus:border-fuchsia-500 transition">
       </textarea>
 
-      <!-- BOTÓN ESTILO TOLUMAR -->
       <button 
         type="submit" 
         class="w-full py-3 rounded-full font-semibold text-white text-lg 
@@ -760,13 +717,13 @@
     </form>
   </div>
 
-  <!-- DETALLES DE CONTACTO -->
   <div class="rounded-2xl p-6 glass">
     <h4 class="text-lg font-bold text-white">Detalles</h4>
     <ul class="mt-4 text-slate-300 space-y-3">
       <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
       <li><strong>WhatsApp:</strong> +57 321 998 9820</li>
       <li><strong>Email:</strong> tolumarw@gmail.com</li>
+      <li><strong>Portafolio:</strong> <a href="https://portmarketo.netlify.app/" target="_blank" rel="noopener" class="text-fuchsia-400 hover:text-fuchsia-300 underline">portmarketo.netlify.app</a></li>
     </ul>
 
     <div class="mt-6">
